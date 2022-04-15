@@ -57,6 +57,18 @@ public class LightManager : MonoBehaviour
         RenderSettings.ambientLight = Preset.AmbientCol.Evaluate(timePercent);
         RenderSettings.fogColor = Preset.FogCol.Evaluate(timePercent);
 
+
+        if (RenderSettings.skybox.HasProperty("_Top"))
+        {
+            RenderSettings.skybox.SetColor("_Top", Preset.upperCol.Evaluate(timePercent));
+        }
+        if (RenderSettings.skybox.HasProperty("_Bottom"))
+        {
+            RenderSettings.skybox.SetColor("_Bottom", Preset.lowerCol.Evaluate(timePercent));
+        }
+
+
+
         if (DirectionalLight != null)
         {
             DirectionalLight.color = Preset.DirectionalCol.Evaluate(timePercent);

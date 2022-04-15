@@ -10,4 +10,7 @@ public class LightingPreset : ScriptableObject
     public Gradient DirectionalCol;
     public Gradient FogCol;
 
+    public Gradient upperCol;
+    public Gradient lowerCol;
+
 }
