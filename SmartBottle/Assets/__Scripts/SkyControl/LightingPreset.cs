@@ -1,0 +1,13 @@
+using UnityEngine;
+
+[System.Serializable]
+[CreateAssetMenu(fileName="Light Preset", menuName="Scriptables/Light Preset", order=1)]
+
+public class LightingPreset : ScriptableObject
+{
+
+    public Gradient AmbientCol;
+    public Gradient DirectionalCol;
+    public Gradient FogCol;
+
+}
