@@ -9,6 +9,9 @@ public class LightManager : MonoBehaviour
     // var
     [SerializeField, Range(0, 24)] private float TimeOfDay;
 
+
+    bool isRealTime = false;
+
     private void OnValidate() 
     {
         if (DirectionalLight != null)
@@ -42,8 +45,17 @@ public class LightManager : MonoBehaviour
         }
         if(Application.isPlaying)
         {
-            TimeOfDay += Time.deltaTime;
-            TimeOfDay %= 24;
+            if(isRealTime)
+            {
+                var today = System.DateTime.Now;
+                TimeOfDay = today.Hour;
+            }
+            else
+            {
+                TimeOfDay += Time.deltaTime;
+                TimeOfDay %= 24;
+            }
+
             updateLight(TimeOfDay /24f);
         }
         else
@@ -74,7 +86,11 @@ public class LightManager : MonoBehaviour
             DirectionalLight.color = Preset.DirectionalCol.Evaluate(timePercent);
             DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent*360f) -90f, 170f, 0));
         }
-
     } 
+
+    public void toggleRealTime()
+    {
+        isRealTime = !isRealTime;
+    }
 
 }
