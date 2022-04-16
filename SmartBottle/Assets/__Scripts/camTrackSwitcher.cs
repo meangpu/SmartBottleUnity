@@ -35,7 +35,7 @@ public class camTrackSwitcher : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(7, 9));
         cart.m_Position = Random.Range(0, 0.4f);
-        cart.m_Speed = Random.Range(.05f, .15f);
+        cart.m_Speed = Random.Range(.08f, .15f);
 
 
         var path = alterPath[getNotOldNum()];

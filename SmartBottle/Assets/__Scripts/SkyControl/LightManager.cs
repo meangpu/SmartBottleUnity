@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [ExecuteAlways]
 public class LightManager : MonoBehaviour
@@ -11,6 +12,12 @@ public class LightManager : MonoBehaviour
 
 
     bool isRealTime = false;
+
+    [SerializeField] Slider sliderTime;
+
+    [SerializeField] Button autoBtn;
+    [SerializeField] Button realBtn;
+
 
     private void OnValidate() 
     {
@@ -47,8 +54,7 @@ public class LightManager : MonoBehaviour
         {
             if(isRealTime)
             {
-                var today = System.DateTime.Now;
-                TimeOfDay = today.Hour;
+                TimeOfDay = sliderTime.value;
             }
             else
             {
@@ -88,9 +94,28 @@ public class LightManager : MonoBehaviour
         }
     } 
 
-    public void toggleRealTime()
+    public void lightRealTime()
     {
-        isRealTime = !isRealTime;
+        sliderTime.gameObject.SetActive(true);
+        var today = System.DateTime.Now;
+        sliderTime.value = today.Hour;
+
+        isRealTime = true;
+        selectNowBtn(realBtn);
     }
+
+    public void lightAuto()
+    {
+        sliderTime.gameObject.SetActive(false);
+        isRealTime = false;
+        selectNowBtn(autoBtn);
+    }
+
+
+    void selectNowBtn(Button _sel)
+    {
+        _sel.Select();
+    }
+
 
 }

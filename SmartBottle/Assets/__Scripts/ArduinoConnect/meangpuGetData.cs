@@ -5,8 +5,16 @@ using UnityEngine;
 public class meangpuGetData : MonoBehaviour
 {
     [SerializeField] UIcontroller UIconScpt;
+    [SerializeField] TreeManager treeManagerScpt;
+
+    [SerializeField] TreeAnimEffect animScpt;
+
+
+
     public SerialController serialController;
     bool getMessage;
+
+    int oldVal;
     int distanceValue;
 
     void Start()
@@ -41,6 +49,19 @@ public class meangpuGetData : MonoBehaviour
             else
             {
                 UIconScpt.updateSlider(distanceValue);
+                treeManagerScpt.SetTreePref(distanceValue);
+
+                if(oldVal == distanceValue)
+                {
+                    return;
+                }
+                else
+                {
+                    animScpt.DoDrinkAnim();
+                    oldVal = distanceValue;
+
+                }
+
             }
     }
 }
