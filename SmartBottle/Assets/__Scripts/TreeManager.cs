@@ -25,26 +25,31 @@ public class TreeManager : MonoBehaviour
     bool firsttime = true;
 
 
+    // real bottle range is 2 - 13 (12 sometime)
     public void SetTreePref(int waterLevel)
     {
 
         if(waterLevel < 2)  // water 0 is water full 
         {
+            return;
+        }
+        else if(waterLevel < 4)  // water 0 is water full 
+        {
             turnOnOnePref(MeangpuTrees[0]);
         }
-        else if(waterLevel < 5)
+        else if(waterLevel < 6)
         {
             turnOnOnePref(MeangpuTrees[1]);
         }
-        else if(waterLevel < 10)
+        else if(waterLevel < 9)
         {
             turnOnOnePref(MeangpuTrees[2]);
         }
-        else if(waterLevel < 18)
+        else if(waterLevel < 11)
         {
             turnOnOnePref(MeangpuTrees[3]);
         }
-        else if(waterLevel <= 20)  // water empty distance max 20
+        else if(waterLevel <= 13)  // water empty distance max 20
         {
             turnOnOnePref(MeangpuTrees[4]);
             if(!firsttime)

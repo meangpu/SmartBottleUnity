@@ -27,11 +27,14 @@ public class TreeAnimEffect : MonoBehaviour
 
     public void PlayLevelupEffectPar()
     {
+        FindObjectOfType<AudioManager>().playNotoverLap("levelUp");
         levelUpPar.Play();  
+        
     }
 
     public void PlayDrinkEffectPar()
     {
+        FindObjectOfType<AudioManager>().playNotoverLap("grow");
         drinkPar.Play();  
         // sound
     }
