@@ -24,6 +24,14 @@ public class TreeManager : MonoBehaviour
     [SerializeField] TreeAnimEffect animScpt;
     bool firsttime = true;
 
+    // private void Start() 
+    // {
+    //     valSlider.onValueChanged.AddListener((v) => 
+    //     {
+    //         SetTreePref((int) v);
+    //     });
+    // }
+
 
     // real bottle range is 2 - 13 (12 sometime)
     public void SetTreePref(int waterLevel)

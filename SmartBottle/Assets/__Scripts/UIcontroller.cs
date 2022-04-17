@@ -37,7 +37,7 @@ public class UIcontroller : MonoBehaviour
         var sequence = DOTween.Sequence();
 
         blurVolumn.SetActive(true);
-        sequence.Append(mainUI.DOLocalMoveY(-1000, .4f));
+        sequence.Append(mainUI.DOLocalMoveY(-1200, .4f));
         sequence.Append(creditUI.DOLocalMoveY(0, .45f));
 
         
@@ -48,7 +48,7 @@ public class UIcontroller : MonoBehaviour
         var sequence = DOTween.Sequence();
 
         blurVolumn.SetActive(false);
-        sequence.Append(creditUI.DOLocalMoveY(955, .4f));
+        sequence.Append(creditUI.DOLocalMoveY(1200, .4f));
         sequence.Append(mainUI.DOLocalMoveY(0, .45f));
 
         

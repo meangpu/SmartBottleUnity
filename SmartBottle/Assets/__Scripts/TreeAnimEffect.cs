@@ -12,6 +12,7 @@ public class TreeAnimEffect : MonoBehaviour
     [SerializeField] ParticleSystem levelUpPar;
 
 
+    [ContextMenu("Play drink")]
     public void DoDrinkAnim()
     {
         var sequence = DOTween.Sequence();
@@ -25,6 +26,7 @@ public class TreeAnimEffect : MonoBehaviour
 
     }
 
+    [ContextMenu("Play levelUp")]
     public void PlayLevelupEffectPar()
     {
         FindObjectOfType<AudioManager>().playNotoverLap("levelUp");
@@ -32,6 +34,7 @@ public class TreeAnimEffect : MonoBehaviour
         
     }
 
+    
     public void PlayDrinkEffectPar()
     {
         FindObjectOfType<AudioManager>().playNotoverLap("grow");
