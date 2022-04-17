@@ -25,13 +25,14 @@ public class TreeManager : MonoBehaviour
     bool firsttime = true;
 
     // disable in arduino mode
-    private void Start() 
-    {
-        valSlider.onValueChanged.AddListener((v) => 
-        {
-            SetTreePref((int) v);
-        });
-    }
+    
+    // private void Start() 
+    // {
+    //     valSlider.onValueChanged.AddListener((v) => 
+    //     {
+    //         SetTreePref((int) v);
+    //     });
+    // }
 
 
     // real bottle range is 2 - 13 (12 sometime)

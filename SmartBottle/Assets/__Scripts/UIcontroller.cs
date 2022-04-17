@@ -26,9 +26,6 @@ public class UIcontroller : MonoBehaviour
             return;
         }
         // get 0-1 by devide and invert it again to 13 is least 0 is full
-        Debug.Log(v);
-        Debug.Log(Mathf.Abs((v / maxNumber)-1));
-
         slider.value = Mathf.Abs((v / maxNumber)-1) ; 
     }
 
